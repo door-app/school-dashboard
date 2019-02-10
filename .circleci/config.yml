@@ -20,8 +20,8 @@ jobs:
       - run:
           name: dockerイメージをビルドする
           command: |
-            docker build -t gcr.io/$(gcloud config get-value project)/home:$CIRCLE_SHA1 -f Dockerfile .
+            docker build -t gcr.io/$(gcloud config get-value project)/school-dashboard:$CIRCLE_SHA1 -f Dockerfile .
       - run:
           name: ビルドしたdockerイメージを GoogleContainerRegistory にpushする
           command: |
-            gcloud docker -- push gcr.io/$(gcloud config get-value project)/home:$CIRCLE_SHA1
+            gcloud docker -- push gcr.io/$(gcloud config get-value project)/school-dashboard:$CIRCLE_SHA1
