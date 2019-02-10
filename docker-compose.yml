@@ -1,0 +1,14 @@
+version: '3.3'
+services:
+  school_dashboard:
+    build: .
+    image: school-dashboard:local
+    volumes:
+      - .:/app
+      - /app/node_modules
+    ports:
+      - "4200:4200"
+    tty: true
+    command:
+      - npm
+      - start
